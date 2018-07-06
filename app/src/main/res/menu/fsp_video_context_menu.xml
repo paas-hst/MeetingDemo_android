@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/video_menu_stop_publish"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="停止广播" />
+
+    <item
+        android:id="@+id/video_menu_stop_subscribe"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="停止订阅" />
+</menu>

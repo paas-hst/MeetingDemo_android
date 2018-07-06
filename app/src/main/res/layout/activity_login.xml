@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.inpor.meetingdemo.ui.LoginActivity">
+
+    <TextView
+        android:id="@+id/login_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:text="@string/login"
+        android:textColor="@color/color_text_white"
+        android:textSize="24sp"
+        />
+    
+    <EditText
+        android:id="@+id/login_et_groupid"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_below="@id/login_tv_title"
+        android:background="@drawable/login_edit_input_bg_selector"
+        android:hint="@string/login_hint_groupid"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:maxLength="64"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/login_et_userid"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_below="@id/login_et_groupid"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:maxLength="64"
+        android:background="@drawable/login_edit_input_bg_selector"
+        android:hint="@string/login_hint_userid"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/login_btn_joingroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login_et_userid"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/login_btn_bg_selector"
+        android:text="@string/login"
+        android:textColor="@color/color_text_white"
+        android:textSize="24sp"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:id="@+id/login_layout_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/login_iv_login_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/login_joingrouping_rotate"/>
+        <TextView
+            android:id="@+id/login_tv_login_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/color_text_white"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/login_tv_company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/company"
+        android:textSize="6sp"
+        android:textColor="#545d75"/>
+
+    <TextView
+        android:id="@+id/login_tv_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/login_tv_company_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/copyright"
+        android:textSize="6sp"
+        android:textColor="#545d75"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/user_menu_video"
+        android:icon="@android:drawable/presence_video_online"
+        android:title="查看视频" />
+
+    <item
+        android:id="@+id/user_menu_audio_subscribe"
+        android:icon="@android:drawable/presence_audio_online"
+        android:title="查看音频" />
+
+    <item
+        android:id="@+id/user_menu_audio_unscribe"
+        android:icon="@android:drawable/presence_audio_away"
+        android:title="关闭音频" />
+
+    <item
+        android:id="@+id/user_menu_info"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="用户信息" />
+
+</menu>

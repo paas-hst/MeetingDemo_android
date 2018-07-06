@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MeetingDemo</string>
+
+    <string name="company">深圳银澎云计算有限公司 版权所有</string>
+    <string name="copyright">Copyright © 2013–2018 hst.com.All Rights Reserved.</string>
+
+    <string name="login">登录</string>
+    <string name="login_hint_groupid">请输入组名</string>
+    <string name="login_hint_userid">请输入用户名</string>
+    <string name="login_state_ing">正在登陆…</string>
+    <string name="login_state_fail">登陆失败</string>
+
+    <string name="setting">设置</string>
+
+    <string name="microphone">麦克风</string>
+    <string name="speaker">扬声器</string>
+    <string name="input_device">输入设备</string>
+    <string name="output_device">输出设备</string>
+    <string name="volume">音量</string>
+    <string name="status">状态</string>
+    <string name="basic_info">基本信息</string>
+    <string name="login_info">登录信息</string>
+</resources>
