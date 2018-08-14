@@ -5,6 +5,9 @@
     <string name="copyright">Copyright © 2013–2018 hst.com.All Rights Reserved.</string>
 
     <string name="login">登录</string>
+    <string name="attend">加入</string>
+    <string name="rejoin">重新登录</string>
+    <string name="app_config">应用配置</string>
     <string name="login_hint_groupid">请输入组名</string>
     <string name="login_hint_userid">请输入用户名</string>
     <string name="login_state_ing">正在登陆…</string>
@@ -20,4 +23,7 @@
     <string name="status">状态</string>
     <string name="basic_info">基本信息</string>
     <string name="login_info">登录信息</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

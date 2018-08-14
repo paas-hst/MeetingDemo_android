@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="372dp"
+    android:layout_height="250dp"
+    android:layout_gravity="center_horizontal">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color_dialog_title">
+
+        <TextView
+            android:id="@+id/switch_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="26dp"
+            android:text="使用默认配置" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+        <TextView
+            android:id="@+id/config_switch"
+            android:layout_width="34dp"
+            android:layout_height="20dp"
+            android:background="@drawable/app_switch_off_selector"
+            android:layout_marginRight="26dp"
+            android:layout_gravity="right|center_vertical"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <EditText
+            android:id="@+id/app_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:width="320dp"
+            android:height="40dp"
+            android:background="@drawable/app_input_selector"
+            android:textSize="8pt"
+            android:singleLine="true"
+            android:hint="App ID"
+            android:paddingLeft="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/app_secret"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:width="320dp"
+            android:height="40dp"
+            android:background="@drawable/app_input_selector"
+            android:textSize="8pt"
+            android:singleLine="true"
+            android:hint="App Secret"
+            android:paddingLeft="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/app_config_cancel_btn_selector"
+            android:layout_marginLeft="26dp"
+            android:width="150dp"
+            android:height="40dp"
+            android:text="取消"/>
+        <Button
+            android:id="@+id/ok_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/app_config_ok_btn_selector"
+            android:width="150dp"
+            android:height="40dp"
+            android:textColor="@color/color_text_white"
+            android:text="确定"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:width="24dp"/>
+</LinearLayout>

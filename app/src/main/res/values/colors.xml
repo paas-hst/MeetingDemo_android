@@ -3,6 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+    <color name="color_dialog_title">#F7F7F7</color>
+    <color name="color_dialog_text">#323232</color>
+    <color name="color_app_config_text">#B9C1D5</color>
     <color name="color_text_white">#FFFFFF</color>
 </resources>

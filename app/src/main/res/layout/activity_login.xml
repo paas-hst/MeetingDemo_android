@@ -4,7 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    tools:context="com.inpor.meetingdemo.ui.LoginActivity">
+    tools:context="com.hst.meetingdemo.ui.LoginActivity">
+
+    <TextView
+        android:id="@+id/app_config_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/app_config_selector"
+        android:text="@string/app_config"
+        android:textColor="@color/color_app_config_text"
+        android:textSize="10sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="26dp"
+        />
 
     <TextView
         android:id="@+id/login_tv_title"
@@ -60,9 +75,9 @@
         android:layout_below="@id/login_et_userid"
         android:layout_marginTop="12dp"
         android:background="@drawable/login_btn_bg_selector"
-        android:text="@string/login"
+        android:text="@string/attend"
         android:textColor="@color/color_text_white"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:gravity="center"
         />
 
@@ -78,16 +93,31 @@
             android:id="@+id/login_iv_login_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:scaleType="center"
-            android:src="@drawable/login_joingrouping_rotate"/>
+            android:src="@drawable/login_waiting"/>
         <TextView
             android:id="@+id/login_tv_login_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
             android:textSize="12sp"
             android:gravity="center"
             android:textColor="@color/color_text_white"/>
+        <TextView
+            android:id="@+id/login_btn_rejoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/login_tv_login_state"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/login_btn2_bg_selector"
+            android:text="@string/rejoin"
+            android:textColor="@color/color_text_white"
+            android:textSize="16sp"
+            android:gravity="center"
+            />
     </LinearLayout>
 
 

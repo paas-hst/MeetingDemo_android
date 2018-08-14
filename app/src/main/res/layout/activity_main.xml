@@ -4,7 +4,7 @@
     android:id="@+id/main_layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.inpor.meetingdemo.ui.MainActivity">
+    tools:context="com.hst.meetingdemo.ui.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,19 +17,19 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <com.inpor.meetingdemo.ui.FspUserView
+            <com.hst.meetingdemo.ui.FspUserView
                 android:id="@+id/main_user_view1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
 
-            <com.inpor.meetingdemo.ui.FspUserView
+            <com.hst.meetingdemo.ui.FspUserView
                 android:id="@+id/main_user_view2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
 
-            <com.inpor.meetingdemo.ui.FspUserView
+            <com.hst.meetingdemo.ui.FspUserView
                 android:id="@+id/main_user_view3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -43,19 +43,19 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <com.inpor.meetingdemo.ui.FspUserView
+            <com.hst.meetingdemo.ui.FspUserView
                 android:id="@+id/main_user_view4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
 
-            <com.inpor.meetingdemo.ui.FspUserView
+            <com.hst.meetingdemo.ui.FspUserView
                 android:id="@+id/main_user_view5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
 
-            <com.inpor.meetingdemo.ui.FspUserView
+            <com.hst.meetingdemo.ui.FspUserView
                 android:id="@+id/main_user_view6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
