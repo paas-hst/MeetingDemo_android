@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.inpor.com.meetingdemo.R;
 import com.hst.meetingdemo.business.FspEvents;
 import com.hst.meetingdemo.business.FspManager;
-import com.inpor.meetingdemo.ui.LoginActivityPermissionsDispatcher;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
