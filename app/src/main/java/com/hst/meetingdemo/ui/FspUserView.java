@@ -10,11 +10,11 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.hst.meetingdemo.R;
+import com.hst.fsp.FspEngine;
+import com.hst.fsp.VideoStatsInfo;
 import com.hst.meetingdemo.business.FspManager;
 import com.hst.meetingdemo.utils.FspUtils;
-import com.inpor.com.meetingdemo.R;
-import com.inpor.fsp.FspEngine;
-import com.inpor.fsp.VideoStatsInfo;
 
 import java.util.ArrayList;
 
@@ -26,6 +26,7 @@ public class FspUserView extends RelativeLayout{
 
     @BindView(R.id.fsp_video_surface)
     SurfaceView m_surfaceView;
+
     @BindView(R.id.fsp_user_tv_info)
     TextView m_tvInfo;
     @BindView(R.id.fsp_video_btn_more)
@@ -44,6 +45,8 @@ public class FspUserView extends RelativeLayout{
 
     private boolean m_haveAudio;
 
+    private boolean m_isMaximization = false;
+
     private int m_renderMode = FspEngine.RENDER_MODE_FIT_CENTER;
 
     public FspUserView(Context context, AttributeSet attrs) {
@@ -51,6 +54,12 @@ public class FspUserView extends RelativeLayout{
 
         LayoutInflater.from(context).inflate(R.layout.user_view, this);
         ButterKnife.bind(this);
+    }
+
+    public boolean isMaximization() {return m_isMaximization;}
+
+    public void setMaximization(boolean isMaximiaztion) {
+        m_isMaximization = isMaximiaztion;
     }
 
     public String getUserId() {
@@ -123,6 +132,10 @@ public class FspUserView extends RelativeLayout{
         return m_surfaceView;
     }
 
+    public int getVideoRenderMode() {
+        return m_renderMode;
+    }
+
     public void onOneSecondTimer() {
         if (!FspUtils.isEmptyText(m_userid)) {
             FspManager fspM = FspManager.instatnce();
@@ -138,6 +151,21 @@ public class FspUserView extends RelativeLayout{
             }
 
             m_tvInfo.setText(strInfo);
+        }
+    }
+
+    public void onVisibleChange()
+    {
+        if (FspUtils.isEmptyText(m_userid) || FspUtils.isEmptyText(m_videoid)) {
+            return;
+        }
+
+        if (getVisibility() == VISIBLE) {
+            FspManager.instatnce().setRemoteVideoRender(m_userid, m_videoid,
+                    m_surfaceView, m_renderMode);
+        } else {
+            FspManager.instatnce().setRemoteVideoRender(m_userid, m_videoid,
+                    null, m_renderMode);
         }
     }
 
@@ -174,7 +202,8 @@ public class FspUserView extends RelativeLayout{
 
                 if (newRenderMode != m_renderMode) {
                     m_renderMode = newRenderMode;
-                    FspManager.instatnce().setRemoteRenderMode(m_userid, m_videoid, m_renderMode);
+                    FspManager.instatnce().setRemoteVideoRender(m_userid, m_videoid,
+                            m_surfaceView, m_renderMode);
                 }
             }
         };

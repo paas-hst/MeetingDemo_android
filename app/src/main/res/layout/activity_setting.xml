@@ -154,7 +154,92 @@
                     android:max="100"
                     android:layout_marginLeft="20dp"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+            </LinearLayout>
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#5a6070"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:text="视频"/>
+
+            <LinearLayout
+                android:id="@+id/layout_set_video_size"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/set_item_back_selector">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:text="分辨率"
+                    android:textColor="@color/color_text_white"
+                    android:layout_marginLeft="20dp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_set_video_sizeinfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_text_white"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="right|center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_white"
+                    android:text="》"/>
+            </LinearLayout>
+
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/set_item_back_selector">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:text="帧率"
+                    android:textColor="@color/color_text_white"
+                    android:layout_marginLeft="20dp"/>
+                
+                <SeekBar
+                    android:id="@+id/sb_setting_fps"
+                    android:layout_width="300dp"
+                    android:min="2"
+                    android:max="30"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_setting_fps"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="right|center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/color_text_white"
+                    android:text="5帧/秒"/>
             </LinearLayout>
 
         </LinearLayout>

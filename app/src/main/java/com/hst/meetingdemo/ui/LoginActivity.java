@@ -10,8 +10,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.inpor.com.meetingdemo.R;
+import com.hst.meetingdemo.R;
 import com.hst.meetingdemo.business.FspEvents;
 import com.hst.meetingdemo.business.FspManager;
 
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText m_EtUserId;
     @BindView(R.id.login_btn_joingroup)
     View m_BtnJoinGroup;
+
     @BindView(R.id.login_layout_state)
     View m_LayoutState;
     @BindView(R.id.login_iv_login_state)
@@ -47,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView m_rejoinBtn;
     @BindView(R.id.app_config_btn)
     TextView m_appConfigBtn;
+    @BindView(R.id.login_tv_sdkversion)
+    TextView m_TvSdkVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         EventBus.getDefault().register(this);
+
+        m_TvSdkVersion.setText("SdkVersion:  "+FspManager.instatnce().getFspEngine().getVersion());
     }
 
     @Override

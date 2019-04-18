@@ -13,10 +13,10 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.hst.meetingdemo.business.FspManager;
-import com.inpor.com.meetingdemo.R;
-import com.inpor.fsp.FspEngine;
+import com.hst.meetingdemo.R;
+import com.hst.fsp.FspEngine;
 import com.hst.meetingdemo.business.FspEvents;
+import com.hst.meetingdemo.business.FspManager;
 import com.hst.meetingdemo.utils.FspUtils;
 import com.orhanobut.logger.Logger;
 
@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView m_ivToolbarBtnVideo;
     @BindView(R.id.toolbar_btn_microphone)
     ImageView m_ivToolbarBtnAudio;
+    @BindView(R.id.main_layout_user_row1)
+    View m_layoutUserRow1;
+    @BindView(R.id.main_layout_user_row2)
+    View m_layoutUserRow2;
 
     @BindViews({
             R.id.main_user_view1, R.id.main_user_view2, R.id.main_user_view3,
@@ -53,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean m_isQuiting = false;
     private boolean m_isResumed = false;
+
+    //userview 的双击检测
+    FspUserView m_lastClickUserView = null;
+    long m_lastClickUserViewTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,28 +78,34 @@ public class MainActivity extends AppCompatActivity {
 
         //可能在LoginActivity 切换 到 Mainactivtiy期间， 收到了 sdk的onRemoteVideoEvent
         //将保存的视频列表逐一打开
-        FspManager fsm = FspManager.instatnce();
+        m_handler.post(new Runnable() {
+            @Override
+            public void run() {
+                FspManager fsm = FspManager.instatnce();
 
-        for (Pair<String, String> remote_video_info : fsm.getRemoteVideos()) {
-            FspUserView videoView = ensureUserView(remote_video_info.first, remote_video_info.second);
-            if (videoView == null) {
-                Logger.e("oncreate no releative userview: %s, %s", remote_video_info.first, remote_video_info.second);
-            } else {
-                videoView.useToRender(remote_video_info.first, remote_video_info.second);
-                if (!fsm.setRemoteVideoRender(remote_video_info.first, remote_video_info.second, videoView.getSurfaceView())) {
-                    videoView.freeRender();
+                for (Pair<String, String> remote_video_info : fsm.getRemoteVideos()) {
+                    FspUserView videoView = ensureUserView(remote_video_info.first, remote_video_info.second);
+                    if (videoView == null) {
+                        Logger.e("oncreate no releative userview: %s, %s", remote_video_info.first, remote_video_info.second);
+                    } else {
+                        videoView.useToRender(remote_video_info.first, remote_video_info.second);
+                        if (!fsm.setRemoteVideoRender(remote_video_info.first, remote_video_info.second,
+                                videoView.getSurfaceView(), videoView.getVideoRenderMode())) {
+                            videoView.freeRender();
+                        }
+                    }
+                }
+
+                for (String remote_audio_userid : fsm.getRemoteAudios()) {
+                    FspUserView videoView = ensureUserView(remote_audio_userid, null);
+                    if (videoView == null) {
+                        Logger.e("oncreate no releative videoview: %s", remote_audio_userid);
+                    } else {
+                        videoView.openAudio(remote_audio_userid);
+                    }
                 }
             }
-        }
-
-        for (String remote_audio_userid : fsm.getRemoteAudios()) {
-            FspUserView videoView = ensureUserView(remote_audio_userid, null);
-            if (videoView == null) {
-                Logger.e("oncreate no releative videoview: %s", remote_audio_userid);
-            } else {
-                videoView.openAudio(remote_audio_userid);
-            }
-        }
+        });
     }
 
     @Override
@@ -140,14 +154,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
             System.exit(0);
         }
-    }
-
-    @OnClick(R.id.main_layout_root)
-    public void OnClickRootLayout()
-    {
-        m_layoutToolbar.setVisibility(View.VISIBLE);
-        stopTimingToolbarHide();
-        startTimingToolbarHide();
     }
 
     @OnClick(R.id.toolbar_btn_microphone)
@@ -235,6 +241,63 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, SettingActivity.class));
     }
 
+    @OnClick({
+            R.id.main_user_view1, R.id.main_user_view2, R.id.main_user_view3,
+            R.id.main_user_view4, R.id.main_user_view5, R.id.main_user_view6
+    })
+    public void onUserViewClick(FspUserView view)
+    {
+        long curTime = System.currentTimeMillis();
+        if (curTime - m_lastClickUserViewTime < 300 && view == m_lastClickUserView) {
+            //dbclick
+            if (view.isMaximization()) {
+                view.setMaximization(false);
+                m_layoutUserRow1.setVisibility(View.VISIBLE);
+                m_layoutUserRow2.setVisibility(View.VISIBLE);
+                for (FspUserView iterView : m_list_userviews) {
+                    if (iterView == view) {
+                        continue;
+                    }
+                    iterView.setVisibility(View.VISIBLE);
+                    iterView.onVisibleChange();
+                }
+            } else {
+                int viewIdx = -1;
+                for (int i = 0; i < m_list_userviews.size(); i++) {
+                    FspUserView iterView = m_list_userviews.get(i);
+                    if (iterView != view) {
+                        iterView.setVisibility(View.GONE);
+                        iterView.onVisibleChange();
+                    } else {
+                        viewIdx = i;
+                    }
+                }
+
+                if (viewIdx >= 3) {
+                    m_layoutUserRow1.setVisibility(View.GONE);
+                } else {
+                    m_layoutUserRow2.setVisibility(View.GONE);
+                }
+                view.setMaximization(true);
+            }
+        }else {
+            //单击，显示工具栏
+            m_handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    long curTime = System.currentTimeMillis();
+                    if (curTime - m_lastClickUserViewTime > 300) {
+                        m_layoutToolbar.setVisibility(View.VISIBLE);
+                        stopTimingToolbarHide();
+                        startTimingToolbarHide();
+                    }
+                }
+            }, 300);
+        }
+
+        m_lastClickUserViewTime = curTime;
+        m_lastClickUserView = view;
+    }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventRemoteVideo(FspEvents.RemoteVideoEvent event) {
@@ -248,7 +311,8 @@ public class MainActivity extends AppCompatActivity {
         if (event.eventtype == FspEngine.REMOTE_VIDEO_PUBLISH_STARTED) {
             videoView.useToRender(event.userid, event.videoid);
             Log.e("testv", "renderview : " + videoView.getSurfaceView());
-            if (!fspManager.setRemoteVideoRender(event.userid, event.videoid, videoView.getSurfaceView())) {
+            if (!fspManager.setRemoteVideoRender(event.userid, event.videoid,
+                    videoView.getSurfaceView(), videoView.getVideoRenderMode())) {
                 videoView.freeRender();
             }
         } else if (event.eventtype == FspEngine.REMOTE_VIDEO_PUBLISH_STOPED) {

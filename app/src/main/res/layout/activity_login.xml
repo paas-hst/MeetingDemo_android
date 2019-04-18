@@ -129,7 +129,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:text="@string/company"
-        android:textSize="6sp"
+        android:textSize="7sp"
         android:textColor="#545d75"/>
 
     <TextView
@@ -140,7 +140,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
         android:text="@string/copyright"
-        android:textSize="6sp"
+        android:textSize="7sp"
+        android:textColor="#545d75"/>
+
+    <TextView
+        android:id="@+id/login_tv_sdkversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/login_tv_copyright"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text=""
+        android:textSize="7sp"
         android:textColor="#545d75"/>
 
 

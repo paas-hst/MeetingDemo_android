@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.inpor.com.meetingdemo">
+    package="com.hst.meetingdemo">
 
     <application
         android:name="com.hst.meetingdemo.MeetingDemoApplication"
@@ -14,27 +14,32 @@
             android:label="@string/setting"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|screenSize"/>
+
         <activity
             android:name="com.hst.meetingdemo.ui.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.hst.meetingdemo.ui.SettingActivity"
             android:label="@string/setting"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize"/>
 
         <activity
             android:name="com.hst.meetingdemo.ui.AppConfigActivity"
-            android:theme="@style/DialogStyle">
+            android:theme="@style/DialogStyle"
+            android:configChanges="orientation|screenSize">
         </activity>
     </application>
 

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.inpor.com.meetingdemo.R;
+import com.hst.meetingdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;

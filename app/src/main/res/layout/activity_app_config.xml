@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="372dp"
-    android:layout_height="250dp"
+    android:layout_height="300dp"
     android:layout_gravity="center_horizontal">
 
     <LinearLayout
@@ -39,14 +39,14 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="6dp">
         <EditText
             android:id="@+id/app_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:width="320dp"
-            android:height="40dp"
+            android:height="38dp"
             android:background="@drawable/app_input_selector"
             android:textSize="8pt"
             android:singleLine="true"
@@ -65,11 +65,32 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:width="320dp"
-            android:height="40dp"
+            android:height="38dp"
             android:background="@drawable/app_input_selector"
             android:textSize="8pt"
             android:singleLine="true"
             android:hint="App Secret"
+            android:paddingLeft="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/app_layout_serveraddr"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/app_serveraddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:width="320dp"
+            android:height="38dp"
+            android:background="@drawable/app_input_selector"
+            android:textSize="8pt"
+            android:singleLine="true"
+            android:hint="ServerAddr"
             android:paddingLeft="16dp"/>
     </LinearLayout>
 
@@ -85,7 +106,7 @@
             android:background="@drawable/app_config_cancel_btn_selector"
             android:layout_marginLeft="26dp"
             android:width="150dp"
-            android:height="40dp"
+            android:height="34dp"
             android:text="取消"/>
         <Button
             android:id="@+id/ok_btn"
@@ -94,7 +115,7 @@
             android:layout_marginLeft="20dp"
             android:background="@drawable/app_config_ok_btn_selector"
             android:width="150dp"
-            android:height="40dp"
+            android:height="34dp"
             android:textColor="@color/color_text_white"
             android:text="确定"/>
     </LinearLayout>
