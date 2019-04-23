@@ -190,7 +190,7 @@ public class FspManager implements IFspEngineEventHandler{
             return false;
         }
 
-        m_fspEngine.stopPublidhVideo();
+        m_fspEngine.stopPublishVideo();
         m_fspEngine.stopPreviewVideo();
 
         m_LocalVideoState = LOCAL_VIDEO_CLOSED;
