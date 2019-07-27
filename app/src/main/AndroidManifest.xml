@@ -2,27 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hst.meetingdemo">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
     <application
-        android:name="com.hst.meetingdemo.MeetingDemoApplication"
+        android:name=".MeetingDemoApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.hst.meetingdemo.ui.MainActivity"
-            android:label="@string/setting"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"
-            android:configChanges="orientation|screenSize"/>
 
         <activity
-            android:name="com.hst.meetingdemo.ui.LoginActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="orientation|screenSize">
+            android:name=".ui.login.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,17 +25,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.hst.meetingdemo.ui.SettingActivity"
-            android:label="@string/setting"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="orientation|screenSize"/>
-
+            android:name=".ui.login_config.AppConfigActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.hst.meetingdemo.ui.AppConfigActivity"
-            android:theme="@style/DialogStyle"
-            android:configChanges="orientation|screenSize">
-        </activity>
+            android:name=".ui.online.OnlineActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.invite_income.InviteIncomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:configChanges="orientation|screenSize" />
     </application>
 
 </manifest>

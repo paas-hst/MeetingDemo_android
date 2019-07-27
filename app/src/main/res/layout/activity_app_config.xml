@@ -1,127 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="372dp"
-    android:layout_height="300dp"
-    android:layout_gravity="center_horizontal">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/color_dialog_title">
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/config_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/config_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/setting"
+            android:textColor="@color/color_262626"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/switch_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="26dp"
             android:text="使用默认配置" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
         <TextView
             android:id="@+id/config_switch"
             android:layout_width="34dp"
             android:layout_height="20dp"
-            android:background="@drawable/app_switch_off_selector"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="26dp"
-            android:layout_gravity="right|center_vertical"/>
-        </LinearLayout>
+            tools:background="@drawable/app_switch_off_selector" />
 
-    </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/app_layout_appid"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp">
-        <EditText
-            android:id="@+id/app_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:width="320dp"
-            android:height="38dp"
-            android:background="@drawable/app_input_selector"
-            android:textSize="8pt"
-            android:singleLine="true"
-            android:hint="App ID"
-            android:paddingLeft="16dp"/>
-    </LinearLayout>
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-        <EditText
-            android:id="@+id/app_secret"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:width="320dp"
-            android:height="38dp"
-            android:background="@drawable/app_input_selector"
-            android:textSize="8pt"
-            android:singleLine="true"
-            android:hint="App Secret"
-            android:paddingLeft="16dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/app_layout_serveraddr"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginTop="20dp">
-        <EditText
-            android:id="@+id/app_serveraddr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:width="320dp"
-            android:height="38dp"
-            android:background="@drawable/app_input_selector"
-            android:textSize="8pt"
-            android:singleLine="true"
-            android:hint="ServerAddr"
-            android:paddingLeft="16dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-        <Button
-            android:id="@+id/cancel_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/app_config_cancel_btn_selector"
             android:layout_marginLeft="26dp"
-            android:width="150dp"
-            android:height="34dp"
-            android:text="取消"/>
-        <Button
-            android:id="@+id/ok_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/app_config_ok_btn_selector"
-            android:width="150dp"
-            android:height="34dp"
-            android:textColor="@color/color_text_white"
-            android:text="确定"/>
+            android:text="App ID"
+            android:textColor="#73000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:imeOptions="flagNoFullscreen"
+            android:id="@+id/app_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:background="@color/color_00000000"
+            android:hint="App ID"
+            android:singleLine="true"
+            android:textColor="#d9000000"
+            android:textSize="12sp" />
     </LinearLayout>
 
-    <TextView
+    <View
+        android:id="@+id/app_view_appsecret"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:width="24dp"/>
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <LinearLayout
+        android:id="@+id/app_layout_appsecret"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:text="App Secret"
+            android:textColor="#73000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:imeOptions="flagNoFullscreen"
+            android:id="@+id/app_secret"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="15dp"
+            android:background="@color/color_00000000"
+            android:hint="App Secret"
+            android:singleLine="true"
+            android:textColor="#d9000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/app_view_serveraddr"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/app_layout_serveraddr"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:text="Server Address"
+            android:textColor="#73000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:imeOptions="flagNoFullscreen"
+            android:id="@+id/app_serveraddr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="15dp"
+            android:background="@color/color_00000000"
+            android:hint="Server Address"
+            android:singleLine="true"
+            android:textColor="#d9000000"
+            android:textSize="12sp" />
+    </LinearLayout>
 </LinearLayout>

@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="color_dialog_title">#F7F7F7</color>
-    <color name="color_dialog_text">#323232</color>
-    <color name="color_app_config_text">#B9C1D5</color>
-    <color name="color_text_white">#FFFFFF</color>
+    <color name="colorPrimary">#6A7DFD</color>
+    <color name="colorPrimaryDark">#6A7DFD</color>
+    <color name="colorAccent">#6A7DFD</color>
+
+    <color name="color_262626">#262626</color>
+    <color name="color_FFFFFF">#FFFFFF</color>
+    <color name="color_FFAB00">#FFAB00</color>
+    <color name="color_BABECB">#BABECB</color>
+    <color name="color_FFB06C">#FFB06C</color>
+    <color name="color_fff2f2f2">#fff2f2f2</color>
+    <color name="color_ff231916">#ff231916</color>
+    <color name="color_00000000">#00000000</color>
+    <color name="color_0D000000">#0D000000</color>
+    <color name="color_E6000000">#E6000000</color>
+    <color name="color_a6000000">#a6000000</color>
+    <color name="color_73000000">#73000000</color>
+    <color name="color_19000000">#19000000</color>
+    <color name="color_d9000000">#d9000000</color>
+    <color name="color_B3000000">#B3000000</color>
+    <color name="color_ff333333">#ff333333</color>
+    <color name="color_5780FF">#5780FF</color>
+    <color name="color_BCCCFF">#BCCCFF</color>
+    <color name="color_565656">#565656</color>
+    <color name="color_6A7EFD">#6A7EFD</color>
+
 </resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="drawable_00000000" >#00000000</drawable>
+    <drawable name="drawable_ffffff" >#ffffff</drawable>
+    <drawable name="drawable_F0EAECFB" >#F0EAECFB</drawable>
+    <drawable name="drawable_6A7DFD" >#6A7DFD</drawable>
+</resources>

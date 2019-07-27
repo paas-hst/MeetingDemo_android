@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingLeft="25dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/login_avator" />
+
+    <TextView
+        android:id="@+id/group_user_item_tv_userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/color_a6000000"
+        android:textSize="14sp"
+        tools:text="43847928" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/group_user_item_iv_audio"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        tools:src="@drawable/group_user_audio_close" />
+
+    <ImageView
+        android:id="@+id/group_user_item_iv_video"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        tools:src="@drawable/group_user_audio_close" />
+
+    <ImageView
+        android:id="@+id/group_user_item_iv_screenshare"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        tools:src="@drawable/group_user_audio_close" />
+
+</LinearLayout>

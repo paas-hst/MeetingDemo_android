@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_E6000000"
+    tools:context=".ui.invite_income.InviteIncomeActivity">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/call_iv_avator"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="115dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:srcCompat="@drawable/ic_svg_logo" />
+
+    <TextView
+        android:id="@+id/call_tv_inviteruserid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/call_iv_avator"
+        android:layout_centerHorizontal="true"
+        tools:text="22324332"
+        android:textColor="#ffffffff"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/call_tv_inviteruserid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:text="@string/join_call"
+        android:textColor="#ffffffff"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/call_tv_reject"
+        android:layout_margin="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/call_reject"
+        android:gravity="center"
+        android:text="@string/reject"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/call_tv_accept"
+        android:layout_margin="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/call_accept"
+        android:gravity="center"
+        android:text="@string/accept"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>

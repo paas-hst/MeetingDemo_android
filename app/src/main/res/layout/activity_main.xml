@@ -4,98 +4,235 @@
     android:id="@+id/main_layout_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hst.meetingdemo.ui.MainActivity">
+    tools:context="com.hst.meetingdemo.ui.main.MainActivity">
 
-    <LinearLayout
+    <com.hst.meetingdemo.ui.main.view.FspUserViewGroup
+        android:id="@+id/fsp_user_view_group"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginBottom="60dp"
+        android:background="#ffb5bdc5" />
 
-        <LinearLayout
-            android:id="@+id/main_layout_user_row1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <com.hst.meetingdemo.ui.FspUserView
-                android:id="@+id/main_user_view1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <com.hst.meetingdemo.ui.FspUserView
-                android:id="@+id/main_user_view2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <com.hst.meetingdemo.ui.FspUserView
-                android:id="@+id/main_user_view3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/main_layout_user_row2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <com.hst.meetingdemo.ui.FspUserView
-                android:id="@+id/main_user_view4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <com.hst.meetingdemo.ui.FspUserView
-                android:id="@+id/main_user_view5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <com.hst.meetingdemo.ui.FspUserView
-                android:id="@+id/main_user_view6"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_rv_event_msg"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_above="@+id/toolbar_layout_main"
+        android:layout_marginRight="140dp"
+        android:background="@drawable/main_rv_bg_shape" />
 
     <LinearLayout
         android:id="@+id/toolbar_layout_main"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
+        android:background="@color/color_FFFFFF"
         android:gravity="center"
-        android:background="@drawable/toolbar_bg">
+        android:orientation="horizontal">
 
-        <ImageView
+        <TextView
             android:id="@+id/toolbar_btn_microphone"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="18dp"
-            android:src="@drawable/toolbar_audio_closed_selector"/>
+            android:layout_weight="1"
+            android:background="@drawable/main_toolbar_ll_bg_selector"
+            android:drawableTop="@drawable/main_toolbar_mic_iv_bg_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingRight="1dp"
+            android:text="@string/microphone"
+            android:textColor="@color/main_toolbar_tv_bg_selector"
+            android:textSize="11sp" />
 
-        <ImageView
+        <TextView
             android:id="@+id/toolbar_btn_video"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="18dp"
-            android:src="@drawable/toolbar_video_closed_selector"/>
+            android:layout_weight="1"
+            android:background="@drawable/main_toolbar_ll_bg_selector"
+            android:drawableTop="@drawable/main_toolbar_camera_iv_bg_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:text="@string/camera"
+            android:textColor="@color/main_toolbar_tv_bg_selector"
+            android:textSize="11sp" />
 
-        <ImageView
-            android:id="@+id/toolbar_btn_setting"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/toolbar_btn_share"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/toolbar_setting_selector"/>
+            android:layout_weight="1"
+            android:background="@drawable/main_toolbar_ll_bg_selector"
+            android:drawableTop="@drawable/main_toolbar_share_iv_bg_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:text="@string/shared"
+            android:textColor="@color/main_toolbar_tv_bg_selector"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/toolbar_btn_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_toolbar_ll_bg_selector"
+            android:drawableTop="@drawable/main_toolbar_user_iv_bg_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:text="@string/user"
+            android:textColor="@color/main_toolbar_tv_bg_selector"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/toolbar_btn_chat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_toolbar_ll_bg_selector"
+            android:drawableTop="@drawable/main_toolbar_chat_iv_bg_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:text="@string/chat"
+            android:textColor="@color/main_toolbar_tv_bg_selector"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/toolbar_btn_more"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_toolbar_ll_bg_selector"
+            android:drawableTop="@drawable/main_toolbar_more_iv_bg_selector"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingLeft="1dp"
+            android:text="@string/more"
+            android:textColor="@color/main_toolbar_tv_bg_selector"
+            android:textSize="11sp" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_above="@id/toolbar_layout_main"
+        android:weightSum="5">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout_share"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_FFFFFF"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <TextView
+                android:id="@+id/toolbar_btn_share_file"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/main_toolbar_mic_bg_selector"
+                android:drawableTop="@drawable/main_toolbar_sharefile_nor"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="1dp"
+                android:text="@string/shared_file"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/toolbar_btn_share_screen"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/main_toolbar_mic_bg_selector"
+                android:drawableTop="@drawable/main_toolbar_sharescreen_nor"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="1dp"
+                android:text="@string/shared_screen"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/toolbar_btn_share_write"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/main_toolbar_mic_bg_selector"
+                android:drawableTop="@drawable/main_toolbar_sharewrite_nor"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="1dp"
+                android:text="@string/shared_whiteboard"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout_more"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:layout_weight="1"
+            android:background="@color/color_FFFFFF"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/toolbar_btn_set"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/main_toolbar_mic_bg_selector"
+                android:drawableTop="@drawable/main_toolbar_set_nor"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="1dp"
+                android:text="@string/setting"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/toolbar_btn_record"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/main_toolbar_mic_bg_selector"
+                android:drawableTop="@drawable/main_toolbar_record_nor"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="1dp"
+                android:text="@string/record"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/toolbar_btn_call"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/main_toolbar_mic_bg_selector"
+                android:drawableTop="@drawable/main_toolbar_call_nor"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="1dp"
+                android:text="@string/call"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_loading_shape"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/login_iv_login_state"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="center"
+        android:src="@drawable/login_waiting" />
+
+    <TextView
+        android:id="@+id/login_tv_login_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        tools:text="sssssssssss"
+        android:textColor="@color/color_262626"
+        android:textSize="14sp" />
+
+    <TextView
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/login_btn_rejoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingRight="12dp"
+        android:background="@drawable/login_btn_login_shape"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        tools:text="@string/rejoin"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="14sp" />
+</LinearLayout>

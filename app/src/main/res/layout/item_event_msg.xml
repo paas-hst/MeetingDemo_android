@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    tools:background="@color/colorPrimary"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/event_msg_item_tv_userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_FFFFFF"
+        android:background="@drawable/item_event_msg_bg_shape"
+        android:textSize="12sp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        tools:text="43847928:" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/event_msg_item_tv_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/online"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="12sp" />
+</LinearLayout>

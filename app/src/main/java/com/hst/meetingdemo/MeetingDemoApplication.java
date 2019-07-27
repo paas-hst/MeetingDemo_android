@@ -1,17 +1,14 @@
 package com.hst.meetingdemo;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.hst.meetingdemo.business.FspManager;
+import com.hst.meetingdemo.utils.SystemUtils;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 
-/**
- * Created by liujc on 2018/2/6.
- * applicationi
- */
-
-public class MeetingDemoApplication extends Application{
+public class MeetingDemoApplication extends Application {
 
     @Override
     public void onCreate() {
@@ -20,8 +17,14 @@ public class MeetingDemoApplication extends Application{
 
         Logger.addLogAdapter(new AndroidLogAdapter());
 
-        FspManager.instatnce().init();
+       /*
+        // 启动延时太久，不再此处init
+        String processAppName = SystemUtils.getAppName(this);
+        if (processAppName == null || !processAppName.equals(this.getPackageName())) {
+            return;
+        }
+        FspManager.getInstance().init();*/
     }
 
-    static public MeetingDemoApplication sApplication;
+    public static MeetingDemoApplication sApplication;
 }

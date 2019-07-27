@@ -3,123 +3,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
-    tools:context="com.hst.meetingdemo.ui.LoginActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hst.meetingdemo.ui.login.LoginActivity">
 
-    <TextView
-        android:id="@+id/app_config_btn"
+    <ImageView
+        android:id="@+id/login_iv_setting"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_height="48dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="24dp"
-        android:background="@drawable/app_config_selector"
-        android:text="@string/app_config"
-        android:textColor="@color/color_app_config_text"
-        android:textSize="10sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="26dp"
-        />
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:src="@drawable/login_setting" />
 
     <TextView
         android:id="@+id/login_tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_height="48dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="60dp"
-        android:text="@string/login"
-        android:textColor="@color/color_text_white"
-        android:textSize="24sp"
-        />
-    
-    <EditText
-        android:id="@+id/login_et_groupid"
-        android:layout_width="240dp"
-        android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:layout_below="@id/login_tv_title"
-        android:background="@drawable/login_edit_input_bg_selector"
-        android:hint="@string/login_hint_groupid"
-        android:imeOptions="actionNext"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:maxLength="64"
-        android:textSize="16sp"/>
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@color/color_262626"
+        android:textSize="18sp" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/login_iv_avator"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="115dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:srcCompat="@drawable/ic_svg_logo" />
+
 
     <EditText
         android:id="@+id/login_et_userid"
-        android:layout_width="240dp"
+        android:layout_width="330dp"
         android:layout_height="40dp"
+        android:layout_below="@id/login_iv_avator"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/login_edit_input_userid_shape"
+        android:hint="@string/login_hint_userid"
+        android:textColorHint="@color/color_BABECB"
+        android:imeOptions="actionDone|flagNoFullscreen"
+        android:maxLength="64"
+        android:maxLines="1"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:layout_below="@id/login_et_groupid"
-        android:imeOptions="actionDone"
-        android:maxLines="1"
+        android:textColor="@color/color_262626"
         android:singleLine="true"
-        android:maxLength="64"
-        android:background="@drawable/login_edit_input_bg_selector"
-        android:hint="@string/login_hint_userid"
-        android:textSize="16sp"/>
+        android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/login_btn_joingroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+    <Button
+        android:id="@+id/login_btn_login"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
         android:layout_below="@id/login_et_userid"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/login_btn_bg_selector"
-        android:text="@string/attend"
-        android:textColor="@color/color_text_white"
-        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_btn_login_shape"
         android:gravity="center"
-        />
-
-    <LinearLayout
-        android:id="@+id/login_layout_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:id="@+id/login_iv_login_state"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:scaleType="center"
-            android:src="@drawable/login_waiting"/>
-        <TextView
-            android:id="@+id/login_tv_login_state"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal"
-            android:textSize="12sp"
-            android:gravity="center"
-            android:textColor="@color/color_text_white"/>
-        <TextView
-            android:id="@+id/login_btn_rejoin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/login_tv_login_state"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/login_btn2_bg_selector"
-            android:text="@string/rejoin"
-            android:textColor="@color/color_text_white"
-            android:textSize="16sp"
-            android:gravity="center"
-            />
-    </LinearLayout>
-
+        android:text="@string/login"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/login_tv_company_name"
@@ -129,8 +77,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:text="@string/company"
-        android:textSize="7sp"
-        android:textColor="#545d75"/>
+        android:textColor="#545d75"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/login_tv_copyright"
@@ -140,8 +88,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
         android:text="@string/copyright"
-        android:textSize="7sp"
-        android:textColor="#545d75"/>
+        android:textColor="#545d75"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/login_tv_sdkversion"
@@ -150,9 +98,9 @@
         android:layout_above="@id/login_tv_copyright"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
-        android:text=""
-        android:textSize="7sp"
-        android:textColor="#545d75"/>
+        tools:text="2.1.2.1"
+        android:textColor="#545d75"
+        android:textSize="12sp" />
 
 
 </RelativeLayout>
