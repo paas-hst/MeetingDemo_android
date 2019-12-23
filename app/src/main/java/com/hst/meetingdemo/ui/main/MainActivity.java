@@ -159,10 +159,11 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(getApplicationContext(), "再按一次返回在线页面",
                         Toast.LENGTH_SHORT).show();
                 m_exitTime = System.currentTimeMillis();
+
+                return true;
             } else {
                 leaveGroup();
             }
-            return true;
         }
         return super.onKeyDown(keyCode, event);
     }

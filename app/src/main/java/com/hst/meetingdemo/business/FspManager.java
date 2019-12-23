@@ -554,6 +554,11 @@ public class FspManager implements IFspEngineEventHandler, IFspSignalingEventHan
     }
 
     @Override
+    public void onUserStatusChange(FspUserInfo changedUserInfo) {
+
+    }
+
+    @Override
     public void onInviteIncome(String inviterUserId, int inviteId, String groupId, String desc) {
         Logger.d("inviterUserId:" + inviterUserId + " inviteId:" + inviteId + " groupId:" + groupId + " desc:" + desc);
 

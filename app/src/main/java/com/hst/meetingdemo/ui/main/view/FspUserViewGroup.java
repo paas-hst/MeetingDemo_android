@@ -399,7 +399,7 @@ public class FspUserViewGroup extends ViewGroup {
                 View child = getChildAt(i);
                 if (child != null && child instanceof FspUserView) {
                     FspUserView userView = ((FspUserView) child);
-                    if (FspUtils.isSameText(userId, userView.getUserId())) {
+                    if (FspUtils.isSameText(userId, userView.getUserId()) && FspUtils.isSameText(videoId, userView.getVideoId())) {
                         view = userView;
                         break;
                     }

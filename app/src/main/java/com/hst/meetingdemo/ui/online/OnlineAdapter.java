@@ -109,7 +109,7 @@ public abstract class OnlineAdapter extends BaseRecyclerAdapter<FspUserInfo> {
         String[] array = new String[len];
         int i = 0;
         for (; i < len; i++) {
-            array[i] = getSelectedItem().valueAt(0).getUserId();
+            array[i] = getSelectedItem().valueAt(i).getUserId();
         }
         return array;
     }
