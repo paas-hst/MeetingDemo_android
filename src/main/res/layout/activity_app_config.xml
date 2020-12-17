@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/config_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/config_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/setting"
+            android:textColor="@color/color_262626"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <RelativeLayout
+		android:id="@+id/layout_recvvoicevariant"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="26dp"
+            android:text="接收变调" />
+			
+		<TextView
+            android:id="@+id/tv_config_recvvoicevariant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="35dp"
+            android:textColor="@color/color_d9000000"
+            android:textSize="14sp"
+            tools:text="500 K" />
+
+        <ImageView
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+			android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="26dp"
+            android:src="@drawable/set_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+		
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="26dp"
+            android:text="强制登录" />
+
+        <TextView
+            android:id="@+id/config_forcelogin"
+            android:layout_width="34dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="26dp"
+            tools:background="@drawable/app_switch_off_selector" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/switch_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="26dp"
+            android:text="使用默认配置" />
+
+        <TextView
+            android:id="@+id/config_switch"
+            android:layout_width="34dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="26dp"
+            tools:background="@drawable/app_switch_off_selector" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <LinearLayout
+        android:id="@+id/app_layout_appid"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:text="App ID"
+            android:textColor="#73000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:imeOptions="flagNoFullscreen"
+            android:id="@+id/app_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:background="@color/color_00000000"
+            android:hint="App ID"
+            android:singleLine="true"
+            android:textColor="#d9000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/app_view_appsecret"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <LinearLayout
+        android:id="@+id/app_layout_appsecret"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:text="App Secret"
+            android:textColor="#73000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:imeOptions="flagNoFullscreen"
+            android:id="@+id/app_secret"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="15dp"
+            android:background="@color/color_00000000"
+            android:hint="App Secret"
+            android:singleLine="true"
+            android:textColor="#d9000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/app_view_serveraddr"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fff2f2f2" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/app_layout_serveraddr"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:text="Server Address"
+            android:textColor="#73000000"
+            android:textSize="12sp" />
+
+        <EditText
+            android:imeOptions="flagNoFullscreen"
+            android:id="@+id/app_serveraddr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="15dp"
+            android:background="@color/color_00000000"
+            android:hint="Server Address"
+            android:singleLine="true"
+            android:textColor="#d9000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

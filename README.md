@@ -29,7 +29,7 @@ private static final String APP_ID = "";
 private static final String APP_SECRETKEY = "";
 ```
 
-然后在 [FSP官网 下载](http://paas.hst.com/developer/downloadSDK) 下载SDK 下载 **sdk**，解压后将其中的 aar文件 复制到本项目libs目录下。
+然后在 [FSP官网 下载](http://paas.hst.com/downloadSDK) 下载SDK 下载 **sdk**，解压后将其中的 aar文件 复制到本项目libs目录下。
 
 最后使用 Android Studio 打开工程，运行app。
 
@@ -39,6 +39,6 @@ private static final String APP_SECRETKEY = "";
 
 ## 联系我们
 
-- 完整的 API 文档见 [开发者中心](http://paas.hst.com/developer/platformDesc)
+- 完整的 API 文档见 [开发者中心](http://paas.hst.com/platformDesc)
 - 如果发现demo的bug, 或想优化demo代码， 欢迎提交
 - 如果有任何咨询问题, 可以拨打 400-1199-666， 0755 83885517, 或加入QQ群 783541706 提问

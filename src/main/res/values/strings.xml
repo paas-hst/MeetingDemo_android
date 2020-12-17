@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">MeetingDemo</string>
+
+    <string name="login">登录</string>
+    <string name="rejoin">重新登录</string>
+    <string name="sure">确认</string>
+    <string name="login_hint_userid">请输入用户ID</string>
+    <string name="login_hint_customname">请输入自定义昵称</string>
+    <string name="login_state_ing">正在登录…</string>
+    <string name="login_state_fail">登录失败</string>
+    <string name="company">深圳齐心好视通云计算有限公司 版权所有</string>
+    <string name="copyright">Copyright © 2013–2020 hst.com.All Rights Reserved.</string>
+
+    <string name="online">在线</string>
+    <string name="offline">离线</string>
+    <string name="busy">忙碌</string>
+    <string name="online_hint_groupid">请输入分组ID</string>
+    <string name="invite_to_join_group">邀请加入组</string>
+    <string name="refresh">刷新</string>
+    <string name="join_group">加入组</string>
+    <string name="join_group_fail">加入组失败</string>
+    <string name="rejoin_group">重新加入组</string>
+
+    <string name="microphone">麦克风</string>
+    <string name="camera">摄像头</string>
+    <string name="speaker">扬声器</string>
+    <string name="shared">共享</string>
+    <string name="shared_whiteboard">新建白板</string>
+    <string name="shared_screen">共享屏幕</string>
+    <string name="shared_file">新建文档</string>
+    <string name="user">参会人</string>
+    <string name="chat">聊天</string>
+    <string name="more">更多</string>
+    <string name="call">呼叫</string>
+    <string name="record">录制</string>
+
+    <string name="setting">设置</string>
+    <string name="basic_info">基本信息</string>
+    <string name="basic_setting">基础设置</string>
+    <string name="room_setting">房间设置</string>
+    <string name="login_out">退出登录</string>
+
+    <string name="join_call">邀请您加入视频通话</string>
+    <string name="reject">拒绝</string>
+    <string name="accept">接听</string>
+
+
+    <string name="send">发送</string>
+    <string name="please_enter">请输入</string>
+
+    <string name="select_call_user">选择呼叫用户</string>
+    <string name="participant">参会人</string>
+    <string name="select_all">全选</string>
+    <string name="search">搜索...</string>
+
+    <string name="system_notification">系统通知</string>
+    <string name="select_sender">选择发送人</string>
+
+
+
+</resources>

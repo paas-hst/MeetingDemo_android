@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hst.meetingdemo.ui.white_board.WhiteBoardActivity">
+
+    <RelativeLayout
+        android:id="@+id/wb_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffffff">
+
+        <ImageView
+            android:id="@+id/wb_btn_newwb"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="14dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/wb_operate_newpage"
+            android:background="@drawable/global_btn_bg_selector"/>
+
+        <LinearLayout
+            android:id="@+id/wb_layout_titlexpand"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/wb_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wb_title_expand_icon" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/wb_tv_pages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wb_layout_titlexpand"
+            android:layout_marginTop="2dp"
+            android:textSize="8sp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_more"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="14dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/wb_icon_more_selector"
+            android:background="@drawable/global_btn_bg_selector"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#E5E5E5"/>
+
+    </RelativeLayout>
+
+    <com.hst.fsp.FspBoardView
+        android:id="@+id/fsp_board_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/wb_layout_title"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/wb_recyclerview_boardlist"
+        android:layout_width="match_parent"
+        android:layout_height="324dp"
+        android:layout_below="@id/wb_layout_title"
+        android:scrollbars="vertical"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/wb_layout_operate_panel"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffffffff"
+        android:layout_below="@id/wb_layout_title"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/wb_btn_prevpage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/wb_operate_prevpage"
+                android:scaleType="centerInside"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="#D0D7DF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#D0D7DF"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/wb_btn_nextpage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/wb_operate_nextpage"
+                android:scaleType="centerInside"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="#D0D7DF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#D0D7DF"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/wb_btn_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/wb_operate_info"
+                android:scaleType="centerInside"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="#D0D7DF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#D0D7DF"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/wb_btn_close"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/wb_operate_close"
+                android:scaleType="centerInside"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="#D0D7DF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#D0D7DF"/>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/wb_layout_pen_styles"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="103dp"
+        android:visibility="gone"
+        android:background="@drawable/wb_edit_toolbar_bg_shape">
+        
+        <ImageView
+            android:id="@+id/wb_btn_pen_width1"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="center"
+            android:src="@drawable/wb_edit_pen_width1_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_pen_width2"
+            android:layout_width="26dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="center"
+            android:src="@drawable/wb_edit_pen_width2_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_pen_width3"
+            android:layout_width="26dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="center"
+            android:src="@drawable/wb_edit_pen_width3_selector"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="13dp"
+            android:layout_marginEnd="2dp"
+            android:layout_gravity="center_vertical"
+            android:background="#DFE4EC"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_pen_color1"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="center"
+            android:src="@drawable/wb_edit_pen_color1_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_pen_color2"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="center"
+            android:src="@drawable/wb_edit_pen_color2_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_pen_color3"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="center"
+            android:src="@drawable/wb_edit_pen_color3_selector"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@drawable/wb_edit_toolbar_bg_shape">
+
+        <ImageView
+            android:id="@+id/wb_btn_edit_start"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/wb_icon_edit_start_selector"
+            android:background="@drawable/global_btn_bg_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_edit_penstyle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/wb_eidt_penstyle_icon"
+            android:visibility="gone"
+            android:scaleType="center"
+            android:background="@drawable/wb_edit_penstyle_bg"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_edit_pen"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/wb_edit_pen"
+            android:visibility="gone"
+            android:scaleType="center"
+            android:background="@drawable/global_btn_bg_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_edit_undo"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:visibility="gone"
+            android:src="@drawable/wb_edit_undo"
+            android:background="@drawable/global_btn_bg_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_edit_redo"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:visibility="gone"
+            android:src="@drawable/wb_edit_redo"
+            android:background="@drawable/global_btn_bg_selector"/>
+
+        <ImageView
+            android:id="@+id/wb_btn_edit_delete"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:visibility="gone"
+            android:src="@drawable/wb_edit_delete"
+            android:background="@drawable/global_btn_bg_selector"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
